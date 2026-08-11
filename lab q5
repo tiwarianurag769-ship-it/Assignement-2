@@ -1,0 +1,50 @@
+using System;
+using StudentLibrary;
+
+namespace StudentClient
+{
+    class ResearchStudent : Student
+    {
+        public void ShowInheritedMembers()
+        {
+            Console.WriteLine("Access through inheritance:");
+
+            // public - accessible
+            Console.WriteLine("Name: " + Name);
+
+            // protected - accessible
+            Console.WriteLine("Department: " + Department);
+
+            // protected internal - accessible
+            Console.WriteLine("College: " + College);
+
+            // private - NOT accessible
+            // Console.WriteLine("Age: " + Age);
+
+            // internal - NOT accessible
+            // Console.WriteLine("CGPA: " + CGPA);
+
+            // private protected - NOT accessible
+            // Console.WriteLine("Address: " + Address);
+        }
+
+        public void ShowObjectMembers()
+        {
+            Student student = new Student();
+
+            Console.WriteLine("\nAccess through Student object:");
+
+            // public - accessible
+            Console.WriteLine("Name: " + student.Name);
+
+            // The following are NOT accessible through
+            // a Student object from this different assembly.
+
+            // Console.WriteLine("Age: " + student.Age);
+            // Console.WriteLine("Department: " + student.Department);
+            // Console.WriteLine("CGPA: " + student.CGPA);
+            // Console.WriteLine("College: " + student.College);
+            // Console.WriteLine("Address: " + student.Address);
+        }
+    }
+}
