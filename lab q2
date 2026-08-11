@@ -1,0 +1,22 @@
+using System;
+
+namespace Lab1_AccessModifiers
+{
+    class TestStudent
+    {
+        public void TestAccess()
+        {
+            Student student = new Student();
+
+            // Accessible
+            Console.WriteLine(student.Name);       // public - YES
+            Console.WriteLine(student.CGPA);       // internal - YES
+            Console.WriteLine(student.College);    // protected internal - YES
+
+            // Not accessible - these lines cause compilation errors
+            // Console.WriteLine(student.Age);         // private - NO
+            // Console.WriteLine(student.Department);  // protected - NO
+            // Console.WriteLine(student.Address);     // private protected - NO
+        }
+    }
+}
