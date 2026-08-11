@@ -1,0 +1,37 @@
+using System;
+
+namespace Lab1_AccessModifiers
+{
+    class Student
+    {
+         
+        public string Name = "John";
+        private int Age = 20;
+        protected string Department = "Computer Science";
+        internal double CGPA = 3.85;
+        protected internal string College = "ABC University";
+        private protected string Address = "New York";
+ 
+        public void Display()
+        {
+            Console.WriteLine("Student Details:");
+            Console.WriteLine("Name: " + Name);
+            Console.WriteLine("Age: " + Age);
+            Console.WriteLine("Department: " + Department);
+            Console.WriteLine("CGPA: " + CGPA);
+            Console.WriteLine("College: " + College);
+            Console.WriteLine("Address: " + Address);
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Student student = new Student();
+            student.Display();
+
+            Console.ReadKey();
+        }
+    }
+}
